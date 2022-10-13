@@ -1,0 +1,34 @@
+using System;
+
+namespace Super
+{
+
+    public class Person
+    {
+            protected string name = "dian";
+            protected int age = 23;
+     
+        public virtual void GetInfo()
+        {
+            Console.WriteLine("Name: {0}", name);
+            Console.WriteLine("Age: {0}", age);
+        }
+        class Employee : Person
+        {
+            public string salary = "4000f";
+            public override void GetInfo()
+            {
+                base.GetInfo();
+                Console.WriteLine("Salary : {0}", salary);
+            }
+        }
+        class TestClass
+        {
+             static void Main()
+             {
+                Employee dian = new Employee();
+                dian.GetInfo();
+             }
+        }
+    }
+}
