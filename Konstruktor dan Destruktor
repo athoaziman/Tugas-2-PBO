@@ -1,0 +1,45 @@
+using System;
+
+namespace KonstruktorDestruktor
+{
+    public class Program
+    {
+        public class UserKonstruktor
+        {
+            public string username;
+            public string password;
+
+            public UserKonstruktor(string username, string password)
+            {
+                this.username = username;
+                this.password = password;
+            }
+        }
+        public class UserDestruktor
+        {
+            public UserDestruktor()
+            {
+                Console.WriteLine("Instance class sudah dibuat");
+            }
+            ~UserDestruktor()
+            {
+                Console.WriteLine("Instance class sudah di destroy");
+            }
+        }
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Konstruktor");
+            UserKonstruktor petani = new UserKonstruktor("petanikode", "kopi");
+            Console.WriteLine("Username: " + petani.username);
+            Console.WriteLine("Password: " + petani.password);
+            Console.WriteLine(" ");
+            Console.WriteLine("Destruktor");
+            Run();
+            GC.Collect();
+        }
+        public static void Run()
+        {
+            UserDestruktor userdestruktor = new UserDestruktor();
+        }
+    }
+}
