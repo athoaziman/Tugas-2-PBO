@@ -1,0 +1,30 @@
+using System;
+
+namespace This
+{
+    class Employee
+    {
+        private string username;
+        private string password;
+
+        public Employee(string uname, string pw)
+        {
+            this.username = uname;
+            this.password = pw;
+        }
+
+        public void printEmployee()
+        {
+            Console.WriteLine("Username: {0}\nPassword: {1}", username, password);
+        }
+
+        class MainClass
+        {
+            static void Main()
+            {
+                Employee E1 = new Employee("Aziman", "12345");
+                E1.printEmployee();
+            }
+        }
+    }
+}
